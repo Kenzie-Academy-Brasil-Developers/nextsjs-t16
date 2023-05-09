@@ -1,7 +1,8 @@
-import Card from "@/components/Card";
+import Card from "@/components/Card"; // alias
 import { api } from "@/services/api";
+import styles from "./styles.module.scss";
 
-interface IPost {
+export interface IPost {
   id: number;
   title: string;
   description: string;
@@ -24,10 +25,11 @@ export default async function PostPage() {
 
   return (
     <main>
-      <ul>
-        {posts.map((post) => (
-          <Card key={post.id} post={post} />
-        ))}
+      <ul className={styles.container}>
+        {posts.map((post, index) => {
+          const color = index % 2 ? "first" : "second";
+          return <Card key={post.id} post={post} color={color} />;
+        })}
       </ul>
     </main>
   );
