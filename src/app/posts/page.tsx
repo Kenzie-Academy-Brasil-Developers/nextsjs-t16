@@ -24,13 +24,11 @@ export default async function PostPage() {
   const posts = await getPosts();
 
   return (
-    <main>
-      <ul className={styles.container}>
-        {posts.map((post, index) => {
-          const color = index % 2 ? "first" : "second";
-          return <Card key={post.id} post={post} color={color} />;
-        })}
-      </ul>
-    </main>
+    <ul className={styles.container}>
+      {posts.map((post, index) => {
+        const color = index % 2 ? "first" : "second";
+        return <Card key={post.id} post={post} color={color} />;
+      })}
+    </ul>
   );
 }

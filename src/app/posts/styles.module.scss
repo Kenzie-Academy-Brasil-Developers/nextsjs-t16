@@ -1,8 +1,9 @@
 .container {
-    display: flex;
-    gap: 0.8rem;
-    flex-wrap: wrap;
-    margin: 1.6rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 30rem);
+    grid-gap: 0.8rem;
+    grid-auto-rows: auto;
 
     list-style: none;
+    justify-content: center;
 }
